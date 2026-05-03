@@ -1,0 +1,5 @@
+'use client'
+import SectionTitle from '@/components/ui/SectionTitle';
+const dev=[['HTML/CSS',95],['JavaScript',90],['React',88],['Next.js',85],['Node.js',75],['TypeScript',80]];const des=[['Figma',92],['Adobe Photoshop',88],['Illustrator',85],['UI/UX Design',90],['Branding',82]]
+const Ring=({n,p}:{n:string,p:number})=><div className='glass p-4 rounded-xl'><p>{n}</p><div className='w-24 h-24 rounded-full border-4 border-secondary/30 grid place-items-center mt-2' style={{background:`conic-gradient(#00f5ff ${p}%, transparent ${p}% 100%)`}}><span className='bg-bg w-16 h-16 rounded-full grid place-items-center'>{p}%</span></div></div>
+export default function Skills(){return <section><SectionTitle title='MY SKILLS'/><div className='grid md:grid-cols-2 gap-8'><div><h3 className='text-2xl mb-4 text-secondary'>Development</h3><div className='grid grid-cols-2 gap-3'>{dev.map(([n,p])=><Ring key={n} n={n} p={p as number}/>)}</div></div><div><h3 className='text-2xl mb-4 text-primary'>Design</h3><div className='grid grid-cols-2 gap-3'>{des.map(([n,p])=><Ring key={n} n={n} p={p as number}/>)}</div></div></div></section>}

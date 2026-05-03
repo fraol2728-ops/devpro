@@ -1,0 +1,3 @@
+'use client'
+import { Canvas } from '@react-three/fiber';import { Float, Icosahedron, Torus, Octahedron } from '@react-three/drei';
+export default function ParticleBackground(){return <div className='absolute inset-0 -z-10 opacity-60'><Canvas><ambientLight intensity={0.7}/><pointLight position={[10,10,10]}/><Float><Icosahedron args={[1.5,1]} position={[-3,1,-1]}><meshStandardMaterial wireframe color='#ff2d78'/></Icosahedron><Torus args={[1,0.3,16,80]} position={[2,-1,0]}><meshStandardMaterial wireframe color='#00f5ff'/></Torus><Octahedron args={[1.2]} position={[0,1.8,-2]}><meshStandardMaterial wireframe color='#b44fff'/></Octahedron></Float></Canvas></div>}

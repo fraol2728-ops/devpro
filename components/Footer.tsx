@@ -1,0 +1,2 @@
+import { FaGithub, FaLinkedin, FaBehance, FaInstagram } from 'react-icons/fa'
+export default function Footer(){return <footer className='border-t border-cyan-500/20 py-8 text-center text-muted'><p>© {new Date().getFullYear()} Dev Fraol. All rights reserved.</p><div className='flex justify-center gap-4 mt-3'>{[FaGithub,FaLinkedin,FaBehance,FaInstagram].map((I,i)=><I key={i} className='text-secondary'/>)}</div></footer>}
