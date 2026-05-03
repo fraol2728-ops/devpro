@@ -1,0 +1,4 @@
+'use client'
+import Link from 'next/link';import { usePathname } from 'next/navigation';import { useState } from 'react';import { Menu,X } from 'lucide-react';
+const links=[['/','HOME'],['/about','ABOUT'],['/projects','PROJECTS'],['/skills','SKILLS'],['/services','SERVICES'],['/contact','CONTACT']]
+export default function Navbar(){const p=usePathname();const [o,s]=useState(false);return <header className='sticky top-0 z-50 glass'><nav className='max-w-6xl mx-auto p-4 flex justify-between items-center'><Link href='/' className='text-secondary font-bold neon-text'>DEV.FRAOL</Link><button className='md:hidden' onClick={()=>s(!o)}>{o?<X/>:<Menu/>}</button><div className={`${o?'block':'hidden'} md:flex gap-5 text-sm`}>{links.map(([h,l])=><Link key={h} href={h} className={`${p===h?'text-secondary border-b border-secondary':''}`}>{l}</Link>)}</div></nav></header>}
